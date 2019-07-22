@@ -1,11 +1,14 @@
 #!/bin/bash
 cp $1/lib/* $CATALINA_HOME/lib/
 
-export CLASSPATH=$1/lib/*
+GEODE_LOCATION=${1%/}
+CATALINA_LOCATION=${CATALINA_HOME%/}
 
-./$1/bin/gfsh "start locator --name=l1"
+export CLASSPATH=$CATALINA_HOME/lib/*
 
-./$1/bin/gfsh "start server --name=server1 --locators=localhost[10334] --server-port=0 \
+sh $GEODE_LOCATION/bin/gfsh "start locator --name=l1"
+
+sh $GEODE_LOCATION/bin/gfsh "start server --name=server1 --locators=localhost[10334] --server-port=0 \
     --classpath=$CLASSPATH"
 
-cp ../build/libs/SessionStateGradle-1.0-SNAPSHOT.war $CATALINA_HOME/webapps/SessionStateExample.war
+cp ../build/libs/SessionStateGradle-1.0-SNAPSHOT.war $CATALINA_LOCATION/webapps/
