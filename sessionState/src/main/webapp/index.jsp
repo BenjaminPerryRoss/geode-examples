@@ -13,18 +13,18 @@
   <table border="1">
     <tr>
       <td>
-        Session Time Out Test
+        Is New Session
       </td>
       <td>
-        <% out.println(session.getMaxInactiveInterval());%>
+        <% out.print(request.getAttribute("isNew")); %>
       </td>
     </tr>
     <tr>
       <td>
-        Is New Test
+        Session Time Out
       </td>
       <td>
-        <% out.print(request.getAttribute("isNewTest")); %>
+        <% out.println(session.getMaxInactiveInterval());%>
       </td>
     </tr>
     <tr>
@@ -92,10 +92,6 @@
   <p>
     result:
     <%out.println(request.getAttribute("getKey"));%>
-  </p>
-  <p>
-    GetAttributeNames - Values:
-    <% out.print(request.getAttribute("res")); %>
   </p>
 </div>
 </body>

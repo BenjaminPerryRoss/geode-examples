@@ -1,4 +1,5 @@
-censed to the Apache Software Foundation (ASF) under one or more
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
 contributor license agreements.  See the NOTICE file distributed with
 this work for additional information regarding copyright ownership.
 The ASF licenses this file to You under the Apache License, Version 2.0
@@ -34,10 +35,7 @@ and to the file context.xml add the line:
 ```
 <Manager className="org.apache.geode.modules.session.catalina.Tomcat9DeltaSessionManager"/> 
 ```
-3. Unzip the file in your geode installation at tools/Modules/Apache_Geode_Modules-tomcat.zip to $CATALINA_HOME. This will add Module specific
-jars and conf files to your tomcat setup.
-
-4. Run the setup script:
+3. Run the setup script:
 ```
 ./scripts/example.sh <root directory of Geode install>
 ```
@@ -45,11 +43,11 @@ jars and conf files to your tomcat setup.
 Specify the root directory of your local Geode installation. Make sure you have no local Geode cluster running, as this step will start
 a new local cluster to manage our Session States.
 
-5. Run the tomcat startup script located at $CATALINA_HOME/bin/startup.sh. You should now be able to reach the example webapp by entering
+4. Run the tomcat startup script located at $CATALINA_HOME/bin/startup.sh. You should now be able to reach the example webapp by entering
 the following URL into your browser:
 ```
-localhost:8080/SessionStateExample
+localhost:8080/SessionStateDemo/index
 ```
 
-6. You should now be able to see details about your current session on the page. You can perform region operations and observe when the 
-current session was created/updated!
+5. You should now be able to see details about your current session on the page. You can add key/value pairs to your session and get them
+back with the available input prompts. 
