@@ -34,13 +34,8 @@ and to the file context.xml add the line:
 ```
 <Manager className="org.apache.geode.modules.session.catalina.Tomcat9DeltaSessionManager"/> 
 ```
-
-3. Return to the root directory of the example and run the command:
-```
-./gradlew build
-```
-
-This will build the example webapp.
+3. Unzip the file in your geode installation at tools/Modules/Apache_Geode_Modules-tomcat.zip to $CATALINA_HOME. This will add Module specific
+jars and conf files to your tomcat setup.
 
 4. Run the setup script:
 ```
