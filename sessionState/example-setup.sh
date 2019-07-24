@@ -1,18 +1,25 @@
 #!/bin/bash
-cp $1/lib/antlr-2.7.7.jar $CATALINA_HOME/lib/
-cp $1/lib/commons-io-2.6.jar $CATALINA_HOME/lib/
-cp $1/lib/commons-lang-2.6.jar $CATALINA_HOME/lib/
-cp $1/lib/commons-validator-1.6.jar $CATALINA_HOME/lib/
-cp $1/lib/fastutil-8.2.1.jar $CATALINA_HOME/lib/
-cp $1/lib/geode-core-9.7.3.jar $CATALINA_HOME/lib/
-cp $1/lib/javax.transaction-api-1.2.jar $CATALINA_HOME/lib/
-cp $1/lib/jgroups-3.6.14.Final.jar $CATALINA_HOME/lib/
-cp $1/lib/log4j-api-2.11.0.jar $CATALINA_HOME/lib/
-cp $1/lib/log4j-core-2.11.0.jar $CATALINA_HOME/lib/
-cp $1/lib/log4j-jul-2.11.0.jar $CATALINA_HOME/lib/
-cp $1/lib/shiro-core-1.4.0.jar $CATALINA_HOME/lib/
 
-unzip -o $1/tools/Modules/Apache_Geode_Modules-9.7.3-Tomcat.zip -d $CATALINA_HOME/
+GEODE_LOCATION=${1%/}
+CATALINA_LOCATION=${CATALINA_HOME%/}
+
+cp $GEODE_LOCATION/lib/antlr-2.7.7.jar $CATALINA_LOCATION/lib/
+cp $GEODE_LOCATION/lib/commons-io-2.6.jar $CATALINA_LOCATION/lib/
+cp $GEODE_LOCATION/lib/commons-lang3-3.8.1.jar $CATALINA_LOCATION/lib/
+cp $GEODE_LOCATION/lib/commons-validator-1.6.jar $CATALINA_LOCATION/lib/
+cp $GEODE_LOCATION/lib/fastutil-8.2.2.jar $CATALINA_LOCATION/lib/
+cp $GEODE_LOCATION/lib/geode-core-1.9.0.jar $CATALINA_LOCATION/lib/
+cp $GEODE_LOCATION/lib/javax.transaction-api-1.3.jar $CATALINA_LOCATION/lib/
+cp $GEODE_LOCATION/lib/jgroups-3.6.14.Final.jar $CATALINA_LOCATION/lib/
+cp $GEODE_LOCATION/lib/log4j-api-2.11.1.jar $CATALINA_LOCATION/lib/
+cp $GEODE_LOCATION/lib/log4j-core-2.11.1.jar $CATALINA_LOCATION/lib/
+cp $GEODE_LOCATION/lib/log4j-jul-2.11.1.jar $CATALINA_LOCATION/lib/
+cp $GEODE_LOCATION/lib/shiro-core-1.4.0.jar $CATALINA_LOCATION/lib/
+cp $GEODE_LOCATION/lib/geode-common-1.9.0.jar $CATALINA_LOCATION/lib/
+cp $GEODE_LOCATION/lib/geode-management-1.9.0.jar $CATALINA_LOCATION/lib/
+cp $GEODE_LOCATION/lib/micrometer-core-1.1.3.jar $CATALINA_LOCATION/lib/
+
+unzip -o $1/tools/Modules/Apache_Geode_Modules-1.9.0-Tomcat.zip -d $CATALINA_HOME/
 
 GEODE_LOCATION=${1%/}
 CATALINA_LOCATION=${CATALINA_HOME%/}

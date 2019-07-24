@@ -19,7 +19,9 @@ limitations under the License.
 
 This is a simple example which demonstrates how to setup and use the Session Management Module for Tomcat.
 
-This example assumes you have Geode and Java installed. It also assumes you have local copy of Tomcat Downloaded.
+This example assumes you have Geode and Java installed. It also assumes you have local copy of Tomcat Downloaded. 
+It was designed and tested with Geode 1.9.0 and Tomcat 9, and while the session features will work with other combinations
+you may need to make some changes to the setup if you're using other versions.
 
 ##Steps
 
